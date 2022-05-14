@@ -5,3 +5,5 @@ class samplecheck():
         print("merge")
     def mergeconflit3(self):
         print("merge3")
+    def mergeconflit2(self):
+        print("merge")
