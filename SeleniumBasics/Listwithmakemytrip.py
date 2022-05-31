@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -14,10 +16,14 @@ class makemytrip():
         self.driver.get("https://www.makemytrip.com/")
 
     def fromList(self):
+        self.driver.implicitly_wait(60)
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, "//span[@class='langCardClose']")))
         self.driver.find_element(by=By.XPATH, value="//span[@class='langCardClose']").click()
+        WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, "//label[@for='fromCity']")))
         FromWebelement = self.driver.find_element(by=By.XPATH, value="//label[@for='fromCity']")
+        time.sleep(10)
         FromWebelement.click()
 
     def fromandTo(self,giventext):
