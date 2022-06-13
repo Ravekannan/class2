@@ -32,12 +32,13 @@ class scrollvalidation():
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(1)
         obj.screenshot("testcase4")
+        # scroll top vertical
         self.driver.execute_script("window.scrollTo(0, 0)","")
         # screenshot
         obj.screenshot("testcase5")
 
         # scroll to a specific element
-        element=self.driver.find_element(by=By.XPATH,value="//h5[text()='Upload Files']//parent::a")
+        element=self.driver.find_element(by=By.XPATH,value="//h5[text()='Down Files']//parent::a")
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
         obj.screenshot("testcase6")
         element.click()
