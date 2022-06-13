@@ -23,7 +23,7 @@ class makemytrip():
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, "//label[@for='fromCity']")))
         FromWebelement = self.driver.find_element(by=By.XPATH, value="//label[@for='fromCity']")
-        time.sleep(10)
+        #time.sleep(10)
         FromWebelement.click()
 
     def fromandTo(self,giventext):
@@ -52,5 +52,5 @@ class makemytrip():
 obj=makemytrip()
 obj.launch()
 obj.fromList()
-obj.fromandTo("PNQ")
-obj.fromandTo("MAA")
+obj.fromandTo("SFO")
+obj.fromandTo("LON")

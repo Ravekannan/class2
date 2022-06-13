@@ -10,7 +10,7 @@ class mouseandkeyboard():
 
     def launch(self):
         self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-        self.driver.get("http://www.leafground.com/pages/drop.html")
+        self.driver.get("https://www.facebook.com/")
         self.driver.maximize_window()
     def mouseactions(self):
         ac = ActionChains(self.driver)
@@ -29,10 +29,9 @@ class mouseandkeyboard():
         ac = ActionChains(self.driver)
         ac.move_to_element(self.driver.find_element(by=By.ID, value="email"))\
             .send_keys("kumar.sathish189@gmail.com").key_down(Keys.TAB).key_up(Keys.TAB)\
-            .move_to_element(self.driver.find_element(by=By.ID, value="pass"))\
-            .send_keys("kumar.sathish189@gmail.com").key_down(Keys.TAB).key_up(Keys.TAB)\
+            .send_keys("password").key_down(Keys.TAB).key_up(Keys.TAB)\
             .key_down(Keys.TAB).key_up(Keys.TAB).key_down(Keys.ENTER).key_up(Keys.ENTER).perform()
 obj=mouseandkeyboard()
 #obj.launch()
-#obj.draganddropmouseactions()
+#obj.fbmouseaction()
 obj.mouseandkeyboard()

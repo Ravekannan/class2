@@ -63,8 +63,10 @@ class scrllscrn():
 
 
     def screenshot(self,filename):
+        ROOT_DIR = os.path.abspath(os.pardir)
+        print(ROOT_DIR)
         self.driver.save_screenshot(
-            "C:\\Users\\sathishkumar\\PycharmProjects\\SeleniumProject\\screenshot\\"+filename+".png")
+            ROOT_DIR+"\\screenshot\\"+filename+".png")
 
 s = scrllscrn()
 s.launch()
